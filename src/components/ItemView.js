@@ -8,11 +8,25 @@ const ItemView = () =>{
         const items = musiciansList.map((i) => {
             return (
                 <li>
-                    <div style={{display: 'flex', flexDirection: 'column', marginBottom: '50px'}}>
+                    <div style={{display: 'flex'}}>
+                        <div>
+                            <img src={i.picture} alt={`${i.name} ${i.lastName}`} style={{maxWidth: '250px'}}/>
+                        </div>
+                        <div style={{display: 'flex', flexDirection: 'column'}}>
+                            <span>
+                                {i.name} {i.lastName}
+                            </span>
+                            <span>
+                                {i.role} at {i.band}
+                            </span>
+                        </div>
+
+                    </div>
+                    {/* <div style={{display: 'flex', flexDirection: 'column', marginBottom: '50px'}}>
                         <span>{i.name}</span>
                         <span>{i.lastName}</span>
                         <img src={i.picture} alt='musician picture' style={{maxWidth: '300px'}}/>
-                    </div>
+                    </div> */}
                     <div style={{height: '10px', width: '100vw', backgroundColor: '#1995AD'}}>
 
                     </div>

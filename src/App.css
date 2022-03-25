@@ -1,19 +1,27 @@
 .main {
-  height: 100vh;
   min-height: 100vh;
   width: 100vw;
-  background-color: dodgerblue;
 }
 .header {
-  background-color: white;
-  height: 200px;
+  background-color: black;
+  height: 300px;
   display: flex;
   margin-left: auto;
   margin-right: auto;
+}
+.contentBlock {
+  display: flex;
 }
 
 .filterMenu {
   background-color: red;
   width: 200px;
   height: 600px;
+  position: fixed;
+}
+
+.items {
+  width: calc(100vw - 200px);
+  height: auto;
+  margin-left: 200px;
 }
