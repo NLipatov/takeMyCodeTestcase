@@ -15,29 +15,37 @@ const ItemView = ({musiciansList}) =>{
         const items = musiciansList.map((i) => {
             return (
                 <li key={i.id}>
-                    <div style={{display: 'flex', backgroundColor: 'grey'}}>
-                        <div>
-                            <img 
-                            src={i.picture} 
-                            alt={`${i.name} ${i.lastName}`} 
-                            style={
-                                {
-                                height: '150px',
-                                width: '150px',
-                                borderRadius: '255px',
-                                padding: '10px',
-                                objectFit: 'cover'
-                            }}/>
+                    <div style={{display: 'flex', flexDirection: 'column'}}>
+                        <div style={{display: 'flex', backgroundColor: 'grey'}}>
+                            <div>
+                                <img 
+                                src={i.picture} 
+                                alt={`${i.name} ${i.lastName}`} 
+                                style={
+                                    {
+                                    height: '150px',
+                                    width: '150px',
+                                    borderRadius: '255px',
+                                    padding: '10px',
+                                    objectFit: 'cover'
+                                }}/>
+                            </div>
+                            <div style={{display: 'flex', flexDirection: 'column', padding: '10px'}}>
+                                <span className="nameAndLastName">
+                                    {i.name} {i.lastName}
+                                </span>
+                                <span className="roleAndBand">
+                                    {i.role} at {i.band}
+                                </span>
+                            </div>
                         </div>
-                        <div style={{display: 'flex', flexDirection: 'column', padding: '10px'}}>
-                            <span className="nameAndLastName">
-                                {i.name} {i.lastName}
-                            </span>
-                            <span className="roleAndBand">
-                                {i.role} at {i.band}
-                            </span>
-                        </div>
+                        <button style={{height: '30px'}}>
+                                <span>
+                                    Add To Dream Band
+                                </span>
+                        </button>
                     </div>
+
                 </li>
             )
         })
@@ -50,7 +58,7 @@ const ItemView = ({musiciansList}) =>{
         return (
             <div>
                 <ul style={
-                    {listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', padding: '10px'}
+                    {listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', padding: '10px', paddingRight: '15px', marginBottom: '0'}
                     }>
                     {items}
                 </ul>

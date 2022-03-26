@@ -27,6 +27,7 @@ const InputBand = ({FilterByBand}) => {
     const onCross = () => {
         setInputValue('');
         setDisplayParamForCross('none');
+        FilterByBand('');
     }
     return (
         <div style={{margin: '5px', backgroundColor: 'white'}}>
@@ -39,7 +40,6 @@ const InputBand = ({FilterByBand}) => {
                 onClick={onCross}>
                 {element}         
             </span>
-            
         </div>
     )
 }

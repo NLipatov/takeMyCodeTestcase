@@ -16,13 +16,13 @@
 .filterMenu {
   background-color: grey;
   width: 200px;
-  height: 550px;
+  height: 500px;
   position: fixed;
   margin-top: 10px;
 }
 
 .items {
-  width: calc(100vw - 200px);
+  width: 100%;
   height: auto;
   margin-left: 200px;
 }
