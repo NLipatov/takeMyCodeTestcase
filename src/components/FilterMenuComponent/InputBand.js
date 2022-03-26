@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import './input.css';
 
 const element = <FontAwesomeIcon icon={faXmark} />
 
@@ -30,11 +31,12 @@ const InputBand = ({FilterByBand}) => {
         FilterByBand('');
     }
     return (
-        <div style={{margin: '5px', backgroundColor: 'white'}}>
+        <div style={{margin: '5px', backgroundColor: 'white', borderRadius: '4px', height: '38px'}}>
             <input value={inputValue} 
                 placeholder='Sort by band'
                 onChange={onChange}
-                style={{border: 'none', width: `${inputWidth}`, outline: 'none'}}
+                style={{border: 'none', width: `${inputWidth}`, borderRadius: '4px', height: '38px'}}
+                className='inputOnFilterMenu'
                 />
             <span style={{fontsize: '14pt', cursor: 'pointer', display: `${displayParamForCross}`}}
                 onClick={onCross}>

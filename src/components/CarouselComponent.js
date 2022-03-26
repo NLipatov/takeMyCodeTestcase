@@ -7,7 +7,7 @@ const CarouselComponent = () => {
     <Carousel title="Our Partners">
         <Carousel.Item>
             <img
-            style={{width: '100vw', height: '200px', backgroundColor: 'black', objectFit: 'contain', transform: 'scale(1.5)', paddingTop: '10px'}}
+            style={{width: '100vw', height: '200px', backgroundColor: 'black', objectFit: 'contain', transform: 'scale(2.5)', paddingTop: '10px'}}
             src="https://metalanarchydotcom.files.wordpress.com/2021/08/640x640.jpg"
             alt="First slide"
             />

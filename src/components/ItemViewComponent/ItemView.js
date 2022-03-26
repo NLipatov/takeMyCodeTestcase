@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFaceTired } from '@fortawesome/free-solid-svg-icons'
 import './ItemView.css';
 
-const ItemView = ({musiciansList, shouldBeInADreamBand, dreamBand}) =>{
+const ItemView = ({musiciansList, setDreamBand, dreamBand}) =>{
     if(musiciansList === undefined){
         return(
             <h3>
@@ -16,9 +16,12 @@ const ItemView = ({musiciansList, shouldBeInADreamBand, dreamBand}) =>{
             return (
                 <li key={i.id}>
                     <div style={{display: 'flex', flexDirection: 'column'}}>
-                        <div style={{display: 'flex', backgroundColor: 'grey'}}>
+                        <div style={{display: 'flex', backgroundColor: dreamBand.filter(x=>x.id === i.id).length === 0 ? "grey" : "gold", transition: 'all 2s ease 0s'}}>
                             <div>
                                 <img 
+                                onClick={() =>{
+                                    console.log(dreamBand);
+                                }}
                                 src={i.picture} 
                                 alt={`${i.name} ${i.lastName}`} 
                                 style={
@@ -41,10 +44,15 @@ const ItemView = ({musiciansList, shouldBeInADreamBand, dreamBand}) =>{
                         </div>
                         <button style={{height: '30px'}}
                             onClick={()=>{
-                                shouldBeInADreamBand(i, dreamBand.includes(i) ? false : true);
+                                if(dreamBand.filter(x=>x.id === i.id).length > 0){
+                                    setDreamBand(dreamBand.filter(x=>x.id !== i.id));
+                                }
+                                else{
+                                    setDreamBand([...dreamBand, i]);
+                                }
                             }}>
                                 <span>
-                                    {dreamBand.includes(member => member.id === i.id) ? "Delete From Dream Band" : "Add To Dream Band"}
+                                    {dreamBand.filter(x=>x.id === i.id).length === 0 ? "Add To Dream Band" : "Delete From Dream Band"}
                                 </span>
                         </button>
                     </div>

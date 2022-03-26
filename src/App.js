@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import ItemView from './components/ItemViewComponent/ItemView';
 import CarouselComponent from './components/CarouselComponent';
-import FilterMenu from './components/FilterMenu';
+import FilterMenu from './components/FilterMenuComponent/FilterMenu';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,15 +10,6 @@ function App() {
   const [appMusiciansList, setAppMusiciansList] = useState([]);
   const [dreamBand, setDreamBand] = useState([]);
 
-  const shouldBeInADreamBand = (persone, bool) => {
-    if(bool){
-      dreamBand.push(persone);
-    }
-    else{
-      let newArray = dreamBand.filter(member => member.id !== persone.id);
-      setDreamBand(newArray);
-    }
-  }
 
   const filterMusicianListByBand = (newList)=>{
     setAppMusiciansList(newList);
@@ -27,7 +18,7 @@ function App() {
   // useEffect(()=>{
   //   console.log('updatedMusicianList');
   //   console.log(appMusiciansList);
-  // }, [appMusiciansList]);
+  // }, []);
   return (
     <div className="main">
       
@@ -39,7 +30,7 @@ function App() {
           <FilterMenu filterMusicianListByBand={filterMusicianListByBand} setAppMusiciansList={setAppMusiciansList}/>
         </div>
         <div className="items">
-          <ItemView musiciansList={appMusiciansList} dreamBand={dreamBand} shouldBeInADreamBand={shouldBeInADreamBand}/>
+          <ItemView musiciansList={appMusiciansList} setDreamBand={setDreamBand} dreamBand={dreamBand}/>
         </div>
       </div>
 
