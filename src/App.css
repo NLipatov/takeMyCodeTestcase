@@ -14,10 +14,11 @@
 }
 
 .filterMenu {
-  background-color: red;
+  background-color: grey;
   width: 200px;
-  height: 600px;
+  height: 550px;
   position: fixed;
+  margin-top: 10px;
 }
 
 .items {

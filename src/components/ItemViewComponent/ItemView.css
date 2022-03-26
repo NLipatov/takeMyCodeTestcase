@@ -1,0 +1,10 @@
+.roleAndBand {
+    font-size: 11pt;
+}
+.roleAndBand::first-letter{
+    text-transform: capitalize;
+}
+.nameAndLastName{
+    font-size: 11pt;
+    font-weight: bold;
+}

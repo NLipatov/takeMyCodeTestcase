@@ -1,5 +1,5 @@
-import React from 'react';
-import ItemView from './components/ItemView';
+import React, {useState, useEffect} from 'react';
+import ItemView from './components/ItemViewComponent/ItemView';
 import CarouselComponent from './components/CarouselComponent';
 import FilterMenu from './components/FilterMenu';
 
@@ -7,8 +7,16 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  const [appMusiciansList, setAppMusiciansList] = useState([]);
+  const filterMusicianListByBand = (newList)=>{
+    setAppMusiciansList(newList);
+    console.log(appMusiciansList);
+  }
+  useEffect(()=>{
+    console.log('updatedMusicianList');
+    console.log(appMusiciansList);
+  }, [appMusiciansList]);
   return (
-    // <ItemView/>
     <div className="main">
       
       <div className="header">
@@ -16,10 +24,10 @@ function App() {
       </div>
       <div className="contentBlock">
         <div className="filterMenu">
-          <FilterMenu/>
+          <FilterMenu filterMusicianListByBand={filterMusicianListByBand} setAppMusiciansList={setAppMusiciansList}/>
         </div>
         <div className="items">
-          <ItemView/>
+          <ItemView musiciansList={appMusiciansList}/>
         </div>
       </div>
 
