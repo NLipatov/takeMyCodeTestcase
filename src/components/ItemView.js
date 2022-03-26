@@ -7,7 +7,7 @@ const ItemView = () =>{
     const renderItems = ()=>{
         const items = musiciansList.map((i) => {
             return (
-                <li>
+                <li key={i.id}>
                     <div style={{display: 'flex'}}>
                         <div>
                             <img src={i.picture} alt={`${i.name} ${i.lastName}`} style={{maxWidth: '250px'}}/>
@@ -22,14 +22,6 @@ const ItemView = () =>{
                         </div>
 
                     </div>
-                    {/* <div style={{display: 'flex', flexDirection: 'column', marginBottom: '50px'}}>
-                        <span>{i.name}</span>
-                        <span>{i.lastName}</span>
-                        <img src={i.picture} alt='musician picture' style={{maxWidth: '300px'}}/>
-                    </div> */}
-                    <div style={{height: '10px', width: '100vw', backgroundColor: '#1995AD'}}>
-
-                    </div>
                 </li>
             )
         })
@@ -40,7 +32,7 @@ const ItemView = () =>{
 
     return (
         <div>
-            <ul>
+            <ul style={{listStyle: 'none'}}>
                 {items}
             </ul>
         </div>
