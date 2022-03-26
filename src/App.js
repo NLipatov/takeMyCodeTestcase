@@ -8,14 +8,26 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [appMusiciansList, setAppMusiciansList] = useState([]);
+  const [dreamBand, setDreamBand] = useState([]);
+
+  const shouldBeInADreamBand = (persone, bool) => {
+    if(bool){
+      dreamBand.push(persone);
+    }
+    else{
+      let newArray = dreamBand.filter(member => member.id !== persone.id);
+      setDreamBand(newArray);
+    }
+  }
+
   const filterMusicianListByBand = (newList)=>{
     setAppMusiciansList(newList);
     console.log(appMusiciansList);
   }
-  useEffect(()=>{
-    console.log('updatedMusicianList');
-    console.log(appMusiciansList);
-  }, [appMusiciansList]);
+  // useEffect(()=>{
+  //   console.log('updatedMusicianList');
+  //   console.log(appMusiciansList);
+  // }, [appMusiciansList]);
   return (
     <div className="main">
       
@@ -27,7 +39,7 @@ function App() {
           <FilterMenu filterMusicianListByBand={filterMusicianListByBand} setAppMusiciansList={setAppMusiciansList}/>
         </div>
         <div className="items">
-          <ItemView musiciansList={appMusiciansList}/>
+          <ItemView musiciansList={appMusiciansList} dreamBand={dreamBand} shouldBeInADreamBand={shouldBeInADreamBand}/>
         </div>
       </div>
 

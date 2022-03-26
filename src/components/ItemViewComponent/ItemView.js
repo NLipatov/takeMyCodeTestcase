@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFaceTired } from '@fortawesome/free-solid-svg-icons'
 import './ItemView.css';
 
-const ItemView = ({musiciansList}) =>{
+const ItemView = ({musiciansList, shouldBeInADreamBand, dreamBand}) =>{
     if(musiciansList === undefined){
         return(
             <h3>
@@ -39,9 +39,12 @@ const ItemView = ({musiciansList}) =>{
                                 </span>
                             </div>
                         </div>
-                        <button style={{height: '30px'}}>
+                        <button style={{height: '30px'}}
+                            onClick={()=>{
+                                shouldBeInADreamBand(i, dreamBand.includes(i) ? false : true);
+                            }}>
                                 <span>
-                                    Add To Dream Band
+                                    {dreamBand.includes(member => member.id === i.id) ? "Delete From Dream Band" : "Add To Dream Band"}
                                 </span>
                         </button>
                     </div>
