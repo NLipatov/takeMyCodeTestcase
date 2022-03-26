@@ -2,12 +2,12 @@ import React from 'react';
 import Select from 'react-select'
 
 
-const SelectRole = ({roles}) => {
+const SelectRole = ({roles, FilterByBand}) => {
     const options = [{value: 'none', label: '-'}]
-    roles.map(i =>{
-        options.push(
+    roles.map(i => {
+        return options.push(
             {
-                value: i.toLowerCase(), label: `${i.charAt(0).toUpperCase()}${i.slice(1)}`
+                value: i, label: `${i.charAt(0).toUpperCase()}${i.slice(1)}`
             }
         )
     })
@@ -17,7 +17,12 @@ const SelectRole = ({roles}) => {
 
     return(
         <>
-            <Select options={options}/>
+            <Select 
+                options={options}
+                placeholder='Sort By Role'
+                onChange={(e)=>{
+                    FilterByBand();
+                }}/>
         </>
     )
 }

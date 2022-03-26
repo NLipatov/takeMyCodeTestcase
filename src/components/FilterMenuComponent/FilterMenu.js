@@ -15,13 +15,15 @@ const FilterMenu = ({filterMusicianListByBand, setAppMusiciansList}) => {
         setAppMusiciansList(musiciansList);
         console.log('setted applist')
     }, [])
-    const FilterByBand = (inputParams) => {
-        filterMusicianListByBand(musiciansList.filter(x=>x.band.toLowerCase().includes(inputParams.toLowerCase())));
+    const FilterByBand = ({filterByBand, filterByRole}) => {
+        if(filterByBand){
+            filterMusicianListByBand(musiciansList.filter(x=>x.band.toLowerCase().includes(filterByBand.toLowerCase())));
+        }
     }
     return (
         <>
             <InputBand FilterByBand={FilterByBand}/>
-            <SelectRole roles={roles}/>
+            <SelectRole roles={roles} FilterByBand={FilterByBand}/>
         </>
     )
 }
