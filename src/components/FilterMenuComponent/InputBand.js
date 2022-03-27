@@ -5,12 +5,12 @@ import './input.css';
 
 const element = <FontAwesomeIcon icon={faXmark} />
 
-const InputBand = ({FilterByBand}) => {
+const InputBand = ({setBandFilter}) => {
     const [inputValue, setInputValue] = useState('');
     const[displayParamForCross, setDisplayParamForCross] = useState('none');
 
     const onChange = (e) => {
-        FilterByBand({filterByBand: e.target.value});
+        setBandFilter(e.target.value);
         setInputValue(e.target.value);
         if(e.target.value.length > 0){
             setDisplayParamForCross('');
@@ -22,7 +22,7 @@ const InputBand = ({FilterByBand}) => {
     const onCross = () => {
         setInputValue('');
         setDisplayParamForCross('none');
-        FilterByBand({filterByBand: undefined});
+        setBandFilter(undefined);
     }
     return (
         <div style={{margin: '5px', backgroundColor: 'white', borderRadius: '4px', height: '38px', display: 'flex'}}>

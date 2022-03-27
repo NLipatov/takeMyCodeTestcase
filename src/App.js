@@ -11,7 +11,7 @@ function App() {
   const [dreamBand, setDreamBand] = useState([]);
 
 
-  const filterMusicianListByBand = (newList)=>{
+  const setMusicianList = (newList)=>{
     setAppMusiciansList(newList);
   }
   // useEffect(()=>{
@@ -26,9 +26,10 @@ function App() {
       </div>
       <div className="contentBlock">
         <div className="filterMenu">
-          <FilterMenu filterMusicianListByBand={filterMusicianListByBand} setAppMusiciansList={setAppMusiciansList}/>
+          <FilterMenu setMusicianList={setMusicianList} setAppMusiciansList={setAppMusiciansList}/>
         </div>
-        <div className="items">
+        <div
+        className="items">
           <ItemView musiciansList={appMusiciansList} setDreamBand={setDreamBand} dreamBand={dreamBand}/>
         </div>
       </div>

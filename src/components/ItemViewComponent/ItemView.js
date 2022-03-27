@@ -1,9 +1,15 @@
-import React from "react";
+import React, {useRef, useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFaceTired } from '@fortawesome/free-solid-svg-icons'
 import './ItemView.css';
+import {useIntersectionRevealer} from 'react-intersection-revealer'
 
 const ItemView = ({musiciansList, setDreamBand, dreamBand}) =>{
+    const ref = useRef()
+    const {heightVisible} = useIntersectionRevealer(ref)
+
+
+    
     if(musiciansList === undefined){
         return(
             <h3>
@@ -14,9 +20,11 @@ const ItemView = ({musiciansList, setDreamBand, dreamBand}) =>{
     const renderItems = ()=>{
         const items = musiciansList.map((i) => {
             return (
-                <li key={i.id}>
+                <li
+                key={i.id}>
                     <div style={{display: 'flex', flexDirection: 'column'}}>
-                        <div style={{display: 'flex', backgroundColor: dreamBand.filter(x=>x.id === i.id).length === 0 ? "grey" : "gold", transition: 'all 2s ease 0s'}}>
+                        <div
+                         style={{display: 'flex', backgroundColor: dreamBand.filter(x=>x.id === i.id).length === 0 ? "grey" : "gold", transition: 'all 2s ease 0s'}}>
                             <div>
                                 <img 
                                 onClick={() =>{
@@ -69,9 +77,12 @@ const ItemView = ({musiciansList, setDreamBand, dreamBand}) =>{
         return (
             <div>
                 <ul style={
-                    {listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', padding: '10px', paddingRight: '15px', marginBottom: '0'}
+                    {listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', padding: '10px', paddingRight: '15px', marginBottom: '20px'}
                     }>
                     {items}
+                    <div className="need-to-track" ref={ref}>
+                        <p>{heightVisible > 0 ? 'We are loading more musicians...' : null}</p>
+                    </div>
                 </ul>
             </div>
         )
@@ -91,7 +102,6 @@ const ItemView = ({musiciansList, setDreamBand, dreamBand}) =>{
             </div>
         )
     }
-
 }
 
 export default ItemView;

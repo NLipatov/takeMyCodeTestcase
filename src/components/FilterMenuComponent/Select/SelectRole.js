@@ -3,7 +3,7 @@ import React from 'react';
 import Select from 'react-select'
 
 
-const SelectRole = ({roles, FilterByBand, resetSelectRole}) => {
+const SelectRole = ({roles, setRoleFilter}) => {
     const options = [{value: undefined, label: 'All Roles'}]
     roles.map(i => {
         return options.push(
@@ -20,7 +20,7 @@ const SelectRole = ({roles, FilterByBand, resetSelectRole}) => {
                 options={options}
                 placeholder='Sort By Role'
                 onChange={(e)=>{
-                    FilterByBand({filterByRole: e.value});
+                    setRoleFilter(e.value);
                 }}/>
         </>
     )
