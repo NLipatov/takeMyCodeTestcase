@@ -7,7 +7,14 @@ import {useIntersectionRevealer} from 'react-intersection-revealer'
 const ItemView = ({musiciansList, setDreamBand, dreamBand}) =>{
     const ref = useRef()
     const {heightVisible} = useIntersectionRevealer(ref)
+    let displayParamForLoadingMore = 'flex';
+    const [onVisibleFired, setOnVisibleFired] = useState(false);
 
+    
+    const onVisible = () => {
+        setOnVisibleFired(true);
+        console.log('onVisible');
+    }
 
     
     if(musiciansList === undefined){
@@ -80,8 +87,9 @@ const ItemView = ({musiciansList, setDreamBand, dreamBand}) =>{
                     {listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', padding: '10px', paddingRight: '15px', marginBottom: '20px'}
                     }>
                     {items}
-                    <div className="need-to-track" ref={ref}>
+                    <div style={{display: `${displayParamForLoadingMore}`, justifyContent: 'center'}} className="need-to-track" ref={ref}>
                         <p>{heightVisible > 0 ? 'We are loading more musicians...' : null}</p>
+                        {(heightVisible > 0 && onVisibleFired === false) ? onVisible() : null}
                     </div>
                 </ul>
             </div>

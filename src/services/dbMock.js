@@ -162,6 +162,70 @@ const useDbMock = () =>{
                 band: 'Rammstein',
                 picture: 'https://i.pinimg.com/originals/e4/56/ac/e456ac3dca77fc14c92c0a926b7cdf8a.jpg'
             },
+            {
+                id: 20,
+                name: 'Donita',
+                lastName: 'Sparks',
+                role: 'frontman',
+                band: 'L7',
+                picture: 'https://cachedimages.podchaser.com/256x256/aHR0cHM6Ly9jcmVhdG9yLWltYWdlcy5wb2RjaGFzZXIuY29tLzE4ZWQ2ZmJhMjczMjhkYWNkYTMzOGY3ZTBiMTJhYzUzLmpwZWc%3D/aHR0cHM6Ly93d3cucG9kY2hhc2VyLmNvbS9pbWFnZXMvbWlzc2luZy1pbWFnZS5wbmc%3D'
+            },
+            {
+                id: 21,
+                name: 'Suzanne',
+                lastName: 'Gardner',
+                role: 'guitarist',
+                band: 'L7',
+                picture: 'https://image.tmdb.org/t/p/original/sVzDCCdVTH4ZEXWkoQIpm5Hq8g5.jpg'
+            },
+            {
+                id: 22,
+                name: 'Jennifer',
+                lastName: 'Finch',
+                role: 'bass guitarist',
+                band: 'L7',
+                picture: 'https://1yd4xt11c7is39w2ckdxdls5-wpengine.netdna-ssl.com/wp-content/uploads/2019/07/Jennifer_Precious_finch_main_750.jpeg'
+            },
+            {
+                id: 23,
+                name: 'Demetra',
+                lastName: 'Plakas',
+                role: 'drummer',
+                band: 'L7',
+                picture: 'https://www.personality-database.com/profile_images/11982.png'
+            },
+            {
+                id: 24,
+                name: 'Vithia',
+                lastName: '',
+                role: 'frontman',
+                band: 'Rise of the Northstar',
+                picture: 'https://i.pinimg.com/originals/ed/8d/81/ed8d817ba3dbdf726e90b4b98133a22a.jpg'
+            },            
+            {
+                id: 25,
+                name: 'Eva-B',
+                lastName: '',
+                role: 'guitarist',
+                band: 'Rise of the Northstar',
+                picture: 'https://live.staticflickr.com/926/43439194752_b6521a0794_b.jpg'
+            },
+            {
+                id: 26,
+                name: 'Fabulous Fab',
+                lastName: '',
+                role: 'bass guitarist',
+                band: 'Rise of the Northstar',
+                picture: 'http://www.shootmeagain.com/photo/Y2015/4865/lowres/riseofthenorthstar-colmar_04-04-2015_1.jpg'
+            },
+            {
+                id: 27,
+                name: 'Phantom',
+                lastName: '',
+                role: 'drummer',
+                band: 'Rise of the Northstar',
+                picture: 'https://www.summer-breeze.de/wp-content/uploads/2019/08/18/RiseOfTheNorthstar_PK_20190817_151.jpg'
+            },
         ]
         return list;
     }
