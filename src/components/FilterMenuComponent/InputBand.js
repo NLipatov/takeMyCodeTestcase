@@ -22,7 +22,7 @@ const InputBand = ({FilterByBand}) => {
     const onCross = () => {
         setInputValue('');
         setDisplayParamForCross('none');
-        FilterByBand({filterByBand: ''});
+        FilterByBand({filterByBand: undefined});
     }
     return (
         <div style={{margin: '5px', backgroundColor: 'white', borderRadius: '4px', height: '38px', display: 'flex'}}>

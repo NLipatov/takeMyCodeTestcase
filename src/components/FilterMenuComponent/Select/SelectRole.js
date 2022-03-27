@@ -1,9 +1,10 @@
+import { faL } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import Select from 'react-select'
 
 
-const SelectRole = ({roles, FilterByBand}) => {
-    const options = [{value: 'none', label: '-'}]
+const SelectRole = ({roles, FilterByBand, resetSelectRole}) => {
+    const options = [{value: undefined, label: 'All Roles'}]
     roles.map(i => {
         return options.push(
             {
@@ -11,8 +12,6 @@ const SelectRole = ({roles, FilterByBand}) => {
             }
         )
     })
-
-    console.log(options)
     
 
     return(
@@ -21,7 +20,7 @@ const SelectRole = ({roles, FilterByBand}) => {
                 options={options}
                 placeholder='Sort By Role'
                 onChange={(e)=>{
-                    FilterByBand();
+                    FilterByBand({filterByRole: e.value});
                 }}/>
         </>
     )

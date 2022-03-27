@@ -13,12 +13,11 @@ function App() {
 
   const filterMusicianListByBand = (newList)=>{
     setAppMusiciansList(newList);
-    console.log(appMusiciansList);
   }
   // useEffect(()=>{
   //   console.log('updatedMusicianList');
   //   console.log(appMusiciansList);
-  // }, []);
+  // }, [appMusiciansList]);
   return (
     <div className="main">
       

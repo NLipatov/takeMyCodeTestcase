@@ -150,7 +150,7 @@ const useDbMock = () =>{
                 id: 18,
                 name: 'Richard',
                 lastName: 'Kruspe',
-                role: 'bass guitarist',
+                role: 'guitarist',
                 band: 'Rammstein',
                 picture: 'https://thoughtsallsorts.files.wordpress.com/2017/09/richardkruspe.jpg?w=337&h=351'
             },
@@ -158,7 +158,7 @@ const useDbMock = () =>{
                 id: 19,
                 name: 'Oliver',
                 lastName: 'Riedel',
-                role: 'guitarist',
+                role: 'bass guitarist',
                 band: 'Rammstein',
                 picture: 'https://i.pinimg.com/originals/e4/56/ac/e456ac3dca77fc14c92c0a926b7cdf8a.jpg'
             },
