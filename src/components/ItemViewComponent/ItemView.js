@@ -1,29 +1,35 @@
 import React, {useRef, useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFaceTired } from '@fortawesome/free-solid-svg-icons'
+import useDbMock from '../../services/dbMock';
 import './ItemView.css';
-import {useIntersectionRevealer} from 'react-intersection-revealer'
+
 
 const ItemView = ({musiciansList, setDreamBand, dreamBand}) =>{
-    const ref = useRef()
-    const {heightVisible} = useIntersectionRevealer(ref)
-    let displayParamForLoadingMore = 'flex';
-    const [onVisibleFired, setOnVisibleFired] = useState(false);
+    const {getMusiciansList} = useDbMock();
 
-    
-    const onVisible = () => {
-        setOnVisibleFired(true);
-        console.log('onVisible');
+    const mockRequest = (offset) => {
+        return new Promise((resolve, reject) =>{
+            console.log(offset)
+            setTimeout(() =>{
+                resolve(getMusiciansList().slice(offset, offset + 20))
+            }, 1200)
+        });
     }
 
-    
-    if(musiciansList === undefined){
-        return(
-            <h3>
-                Nothing was in musiciansList
-            </h3>
-        )
+
+    mockRequest(0).then(e => 
+        console.log(e)
+    )
+
+    useEffect(() =>{
+        document.addEventListener('scroll', scrollHandler)
+    })
+    const scrollHandler = (e) => {
+        console.log('scroll');
     }
+    
+    
     const renderItems = ()=>{
         const items = musiciansList.map((i) => {
             return (
@@ -87,10 +93,6 @@ const ItemView = ({musiciansList, setDreamBand, dreamBand}) =>{
                     {listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', padding: '10px', paddingRight: '15px', marginBottom: '20px'}
                     }>
                     {items}
-                    <div style={{display: `${displayParamForLoadingMore}`, justifyContent: 'center'}} className="need-to-track" ref={ref}>
-                        <p>{heightVisible > 0 ? 'We are loading more musicians...' : null}</p>
-                        {(heightVisible > 0 && onVisibleFired === false) ? onVisible() : null}
-                    </div>
                 </ul>
             </div>
         )

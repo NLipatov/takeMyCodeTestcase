@@ -14,10 +14,9 @@ function App() {
   const setMusicianList = (newList)=>{
     setAppMusiciansList(newList);
   }
-  // useEffect(()=>{
-  //   console.log('updatedMusicianList');
-  //   console.log(appMusiciansList);
-  // }, [appMusiciansList]);
+  useEffect(()=>{
+    console.log('app effect')
+  }, []);
   return (
     <div className="main">
       
