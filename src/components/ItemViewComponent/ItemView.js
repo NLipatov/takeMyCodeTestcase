@@ -51,9 +51,10 @@ const ItemView = ({filtersApplied, musiciansList, setDreamBand, dreamBand}) =>{
 
 
     const scrollHandler = (e) => {
+        console.log(`offset height: ${document.getElementsByClassName("listOfMusicians")[0].offsetHeight}`)
+        console.log(`offset height: ${e.target.documentElement.scrollTop}`)
         if((document.getElementsByClassName("listOfMusicians")[0].offsetHeight - 532) - e.target.documentElement.scrollTop < 0){
-            console.log(`offset height: ${document.getElementsByClassName("listOfMusicians")[0].offsetHeight}`)
-            console.log(`offset height: ${e.target.documentElement.scrollTop}`)
+
             console.log('end');
             setLoading(true);
             document.removeEventListener('scroll', scrollHandler);
