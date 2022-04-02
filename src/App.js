@@ -9,10 +9,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const [appMusiciansList, setAppMusiciansList] = useState([]);
   const [dreamBand, setDreamBand] = useState([]);
+  const [filtersApplied, setFiltersApplied] = useState(false);
 
 
   const setMusicianList = (newList)=>{
     setAppMusiciansList(newList);
+    setFiltersApplied(true);
   }
   useEffect(()=>{
   }, []);
@@ -28,7 +30,7 @@ function App() {
         </div>
         <div
         className="items">
-          <ItemView musiciansList={appMusiciansList} setDreamBand={setDreamBand} dreamBand={dreamBand}/>
+          <ItemView filtersApplied={filtersApplied} musiciansList={appMusiciansList} setDreamBand={setDreamBand} dreamBand={dreamBand}/>
         </div>
       </div>
 

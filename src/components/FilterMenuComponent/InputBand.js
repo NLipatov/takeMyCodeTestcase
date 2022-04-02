@@ -29,7 +29,7 @@ const InputBand = ({setBandFilter}) => {
             <input value={inputValue} 
                 placeholder='Sort by band'
                 onChange={onChange}
-                style={{border: 'none', width: `100%`, borderRadius: '4px', height: '38px'}}
+                style={{border: 'none', width: `100%`, borderRadius: '4px', height: '38px', padding: '10px'}}
                 className='inputOnFilterMenu'
                 />
             <span style={{fontSize: '19pt', cursor: 'pointer', display: `${displayParamForCross}`, position: 'absolute', right: '10px'}}

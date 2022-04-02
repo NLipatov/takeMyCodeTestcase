@@ -5,7 +5,7 @@ import useDbMock from '../../services/dbMock';
 import './ItemView.css';
 
 
-const ItemView = ({musiciansList, setDreamBand, dreamBand}) =>{
+const ItemView = ({filtersApplied, musiciansList, setDreamBand, dreamBand}) =>{
     const {getMusiciansList} = useDbMock();
     const [currentList, setCurrentList] = useState([]);
 
@@ -125,7 +125,7 @@ const ItemView = ({musiciansList, setDreamBand, dreamBand}) =>{
     }
 
 
-    if(musiciansList.length > 0) {
+    if(!filtersApplied) {
         return (
             <div>
                 <ul className="listOfMusicians"
@@ -136,24 +136,32 @@ const ItemView = ({musiciansList, setDreamBand, dreamBand}) =>{
                 </ul>
                 {(loading && !wholeListloaded) ? loadingSpan() : null}
             </div>
-
-            
         )
     }
     else{
-        return(
-            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '10px'}}>
-                <span style={{fontSize: '60pt'}}>
-                    <FontAwesomeIcon icon={faFaceTired}/>
-                </span>
-                <span style={{fontSize: '11pt'}}>
-                    Sorry
-                </span>
-                <h3 style={{fontSize: '11pt'}}>
-                    There's nothing we can find by your request
-                </h3>
+        return (
+            <div>
+                <ul className="listOfMusicians"
+                style={
+                    {listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', padding: '10px', paddingRight: '15px', marginBottom: '20px'}
+                    }>
+                    {musiciansList.length > 0 ? renderItems(musiciansList) : null}
+                </ul>
             </div>
         )
+        // return(
+        //     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '10px'}}>
+        //         <span style={{fontSize: '60pt'}}>
+        //             <FontAwesomeIcon icon={faFaceTired}/>
+        //         </span>
+        //         <span style={{fontSize: '11pt'}}>
+        //             Sorry
+        //         </span>
+        //         <h3 style={{fontSize: '11pt'}}>
+        //             There's nothing we can find by your request
+        //         </h3>
+        //     </div>
+        // )
     }
 }
 
