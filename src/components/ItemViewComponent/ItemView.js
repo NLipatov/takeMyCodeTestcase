@@ -7,37 +7,48 @@ import './ItemView.css';
 
 const ItemView = ({musiciansList, setDreamBand, dreamBand}) =>{
     const {getMusiciansList} = useDbMock();
+    const [currentList, setCurrentList] = useState([]);
+
+    const [loading, setLoading] = useState(false);
 
     const mockRequest = (offset) => {
         return new Promise((resolve, reject) =>{
-            console.log(offset)
             setTimeout(() =>{
-                resolve(getMusiciansList().slice(offset, offset + 20))
+                resolve(getMusiciansList().slice(offset, offset + 5))
             }, 1200)
         });
     }
 
 
     mockRequest(0).then(e => 
-        console.log(e)
+        setCurrentList(e)
     )
 
     useEffect(() =>{
+        console.log('event listener on scroll added')
         document.addEventListener('scroll', scrollHandler)
-    })
+    }, [])
+    useEffect(() =>{
+        console.log(`current list len: ${currentList.length}`)
+    }, [currentList.length])
+
     const scrollHandler = (e) => {
-        console.log('scroll');
+        // console.log('scroll');
+        // console.log(`scrollHeight: ${e.target.documentElement.scrollHeight}` )
+        console.log(`element height: ${document.getElementsByClassName("listOfMusicians")[0].offsetHeight - 532}`)
+        console.log(`scrollTop: ${e.target.documentElement.scrollTop}`)
+        
     }
     
     
-    const renderItems = ()=>{
-        const items = musiciansList.map((i) => {
+    const renderItems = (arr)=>{
+        const items = arr.map((i) => {
             return (
                 <li
                 key={i.id}>
                     <div style={{display: 'flex', flexDirection: 'column'}}>
                         <div
-                         style={{display: 'flex', backgroundColor: dreamBand.filter(x=>x.id === i.id).length === 0 ? "grey" : "gold", transition: 'all 2s ease 0s'}}>
+                            style={{display: 'flex', backgroundColor: dreamBand.filter(x=>x.id === i.id).length === 0 ? "grey" : "gold", transition: 'all 2s ease 0s'}}>
                             <div>
                                 <img 
                                 onClick={() =>{
@@ -77,22 +88,22 @@ const ItemView = ({musiciansList, setDreamBand, dreamBand}) =>{
                                 </span>
                         </button>
                     </div>
-
                 </li>
             )
         })
+
         return items;
     }
 
-    const items = renderItems();
 
     if(musiciansList.length > 0) {
         return (
             <div>
-                <ul style={
+                <ul className="listOfMusicians"
+                 style={
                     {listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', padding: '10px', paddingRight: '15px', marginBottom: '20px'}
                     }>
-                    {items}
+                    {currentList.length > 0 ? renderItems(currentList) : null}
                 </ul>
             </div>
         )
