@@ -215,7 +215,7 @@ const useDbMock = () =>{
             lastName: '',
             role: 'bass guitarist',
             band: 'Rise of the Northstar',
-            picture: 'http://www.shootmeagain.com/photo/Y2015/4865/lowres/riseofthenorthstar-colmar_04-04-2015_1.jpg'
+            picture: 'http://ekladata.com/G05w9fpqeHsORwvb6dwwsChZTUg.jpg'
         },
         {
             id: 27,

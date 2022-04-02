@@ -10,33 +10,52 @@ const ItemView = ({musiciansList, setDreamBand, dreamBand}) =>{
     const [currentList, setCurrentList] = useState([]);
 
     const [loading, setLoading] = useState(false);
+    const [offset, setOffset] = useState(5);
+    const [wholeListloaded, setWholeListloaded] = useState(false);
 
     const mockRequest = (offset) => {
         return new Promise((resolve, reject) =>{
             setTimeout(() =>{
-                resolve(getMusiciansList().slice(offset, offset + 5))
+                resolve(getMusiciansList().slice(0, offset))
             }, 1200)
         });
     }
 
 
-    mockRequest(0).then(e => 
-        setCurrentList(e)
+    mockRequest(offset).then(e => 
+        {
+            if(loading){
+                setLoading(false);
+                console.log('mockRequest');
+                setCurrentList(e);
+                setOffset(offset + 5)
+            }
+        }
     )
 
     useEffect(() =>{
-        console.log('event listener on scroll added')
-        document.addEventListener('scroll', scrollHandler)
-    }, [])
-    useEffect(() =>{
+        if(currentList.length === getMusiciansList().length){
+            console.log('REMOVING event listener');
+            setWholeListloaded(true);
+        }
+        else{
+            document.addEventListener('scroll', scrollHandler)
+        }
+
         console.log(`current list len: ${currentList.length}`)
+        console.log(`current offset: ${offset}`)
+        if(currentList.length === 0){
+            setLoading(true);
+        }
     }, [currentList.length])
 
+
     const scrollHandler = (e) => {
-        // console.log('scroll');
-        // console.log(`scrollHeight: ${e.target.documentElement.scrollHeight}` )
-        console.log(`element height: ${document.getElementsByClassName("listOfMusicians")[0].offsetHeight - 532}`)
-        console.log(`scrollTop: ${e.target.documentElement.scrollTop}`)
+        if((document.getElementsByClassName("listOfMusicians")[0].offsetHeight - 532) - e.target.documentElement.scrollTop < 0){
+            console.log('end');
+            setLoading(true);
+            document.removeEventListener('scroll', scrollHandler);
+        }
         
     }
     
@@ -95,17 +114,30 @@ const ItemView = ({musiciansList, setDreamBand, dreamBand}) =>{
         return items;
     }
 
+    const loadingSpan = () => {
+        return(
+            <div style={{marginTop: '-20px'}}>
+                <span>
+                    {currentList.length === 0 ? "Loading musicians..." : "Loading more..."}
+                </span>
+            </div>
+        )
+    }
+
 
     if(musiciansList.length > 0) {
         return (
             <div>
                 <ul className="listOfMusicians"
-                 style={
+                style={
                     {listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', padding: '10px', paddingRight: '15px', marginBottom: '20px'}
                     }>
                     {currentList.length > 0 ? renderItems(currentList) : null}
                 </ul>
+                {(loading && !wholeListloaded) ? loadingSpan() : null}
             </div>
+
+            
         )
     }
     else{

@@ -15,7 +15,6 @@ function App() {
     setAppMusiciansList(newList);
   }
   useEffect(()=>{
-    console.log('app effect')
   }, []);
   return (
     <div className="main">
