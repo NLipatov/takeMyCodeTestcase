@@ -1,6 +1,4 @@
 import React, {useRef, useState, useEffect } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFaceTired } from '@fortawesome/free-solid-svg-icons'
 import useDbMock from '../../services/dbMock';
 import './ItemView.css';
 
@@ -44,23 +42,18 @@ const ItemView = ({filtersApplied, musiciansList, setDreamBand, dreamBand}) =>{
     useEffect(() =>{
         ref.current.musiciansListHeight = document.querySelector(".listOfMusicians").offsetHeight;
         ref.current.offsetHeight = document.querySelector("body").offsetHeight;
-        console.log(`effect musician height: ${ref.current.musiciansListHeight}`)
 
         if(currentList.length === getMusiciansList().length){
-            console.log('REMOVING event listener');
             setWholeListloaded(true);
         }
         else{
             if(currentList.length > 0 && ref.current.scrollListenerAdded === false){
-                console.log('adding event listener');
                 document.addEventListener('scroll', scrollHandler)
                 ref.current.scrollListenerAdded = true;
             }
 
         }
 
-        console.log(`current list len: ${currentList.length}`)
-        console.log(`current offset: ${offset}`)
         if(currentList.length === 0){
             setLoading(true);
         }
@@ -68,23 +61,8 @@ const ItemView = ({filtersApplied, musiciansList, setDreamBand, dreamBand}) =>{
 
 
     const scrollHandler = (e) => {
-        // //Высота окна пользователя
-        // console.log(`offset height: ${e.target.documentElement.offsetHeight}`)
-        // //Высота элемента с музыкантами
-        // console.log(`element height: ${document.getElementsByClassName("listOfMusicians")[0].offsetHeight}`)
-        // //Проскролленая высота
-        // console.log(`scrolled: ${e.target.documentElement.scrollTop}`)
-        // // console.log(`ScrollTop: ${e.target.documentElement.scrollTop}`)
-        // // console.log(`ClientHeight: ${document.ClientHeight}`)
-        // console.log(`difference: ${(e.target.documentElement.offsetHeight - document.getElementsByClassName("listOfMusicians")[0].offsetHeight)}`)
-        // console.log(`scrollTop: ${e.target.documentElement.scrollTop}`)
-        console.log(`handler got: Difference: ${ref.current.offsetHeight - ref.current.musiciansListHeight}, scroll With margin: ${e.target.documentElement.scrollTop - ref.current.scrollTopMargin}`)
-        // console.log(`scrollHandler difference: ${e.target.documentElement.offsetHeight - ref.current.musiciansListHeight}`)
-        console.log(`scrollTop: ${e.target.documentElement.scrollTop}`)
         if((ref.current.offsetHeight - ref.current.musiciansListHeight) < e.target.documentElement.scrollTop - ref.current.scrollTopMargin){
-            console.log('end');
             ref.current.scrollTopMargin += 950;
-            console.log(`scroll margin update: ${ref.current.scrollTopMargin}`)
             setLoading(true);
             
         }
@@ -99,7 +77,7 @@ const ItemView = ({filtersApplied, musiciansList, setDreamBand, dreamBand}) =>{
                 key={i.id}>
                     <div style={{display: 'flex', flexDirection: 'column'}}>
                         <div
-                            style={{display: 'flex', backgroundColor: dreamBand.filter(x=>x.id === i.id).length === 0 ? "grey" : "gold", transition: 'all 2s ease 0s'}}>
+                            style={{display: 'flex', backgroundColor: dreamBand.filter(x=>x.id === i.id).length === 0 ? "grey" : "gold", transition: 'all 2s ease 0s', borderTopLeftRadius: '25px'}}>
                             <div>
                                 <img 
                                 onClick={() =>{
@@ -125,7 +103,7 @@ const ItemView = ({filtersApplied, musiciansList, setDreamBand, dreamBand}) =>{
                                 </span>
                             </div>
                         </div>
-                        <button style={{height: '30px'}}
+                        <button style={{height: '30px', borderBottomRightRadius: '25px'}}
                             onClick={()=>{
                                 if(dreamBand.filter(x=>x.id === i.id).length > 0){
                                     setDreamBand(dreamBand.filter(x=>x.id !== i.id));
@@ -181,19 +159,6 @@ const ItemView = ({filtersApplied, musiciansList, setDreamBand, dreamBand}) =>{
                 </ul>
             </div>
         )
-        // return(
-        //     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '10px'}}>
-        //         <span style={{fontSize: '60pt'}}>
-        //             <FontAwesomeIcon icon={faFaceTired}/>
-        //         </span>
-        //         <span style={{fontSize: '11pt'}}>
-        //             Sorry
-        //         </span>
-        //         <h3 style={{fontSize: '11pt'}}>
-        //             There's nothing we can find by your request
-        //         </h3>
-        //     </div>
-        // )
     }
 }
 

@@ -17,9 +17,11 @@ function App() {
     setFiltersApplied(true);
   }
   useEffect(()=>{
+
   }, []);
   return (
     <div className="main">
+
       
       <div className="header">
         <CarouselComponent/>
