@@ -21,6 +21,7 @@
   height: 500px;
   position: fixed;
   margin-top: 10px;
+  transition: all 2s ease 0s;
 }
 
 .items {

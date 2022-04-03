@@ -1,4 +1,3 @@
-import { faL } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import Select from 'react-select'
 

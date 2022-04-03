@@ -64,7 +64,12 @@ const ItemView = ({filtersApplied, musiciansList, setDreamBand, dreamBand}) =>{
         if((ref.current.offsetHeight - ref.current.musiciansListHeight) < e.target.documentElement.scrollTop - ref.current.scrollTopMargin){
             ref.current.scrollTopMargin += 950;
             setLoading(true);
-            
+        }
+        if(e.target.documentElement.scrollTop > 300){
+            document.querySelector(".filterMenu").style.transform = "translate(0px, -290px)";
+        }
+        else{
+            document.querySelector(".filterMenu").style.transform = "translate(0px, 0px)";
         }
         
     }
