@@ -21,6 +21,13 @@ const ItemView = ({filtersApplied, musiciansList, setDreamBand, dreamBand}) =>{
         });
     }
 
+    const ref = useRef({
+        musiciansListHeight: 0,
+        offsetHeight: 0,
+        scrollTopMargin: 10,
+        scrollListenerAdded: false
+    });
+
 
     mockRequest(offset).then(e => 
         {
@@ -33,13 +40,23 @@ const ItemView = ({filtersApplied, musiciansList, setDreamBand, dreamBand}) =>{
         }
     )
 
+
     useEffect(() =>{
+        ref.current.musiciansListHeight = document.querySelector(".listOfMusicians").offsetHeight;
+        ref.current.offsetHeight = document.querySelector("body").offsetHeight;
+        console.log(`effect musician height: ${ref.current.musiciansListHeight}`)
+
         if(currentList.length === getMusiciansList().length){
             console.log('REMOVING event listener');
             setWholeListloaded(true);
         }
         else{
-            document.addEventListener('scroll', scrollHandler)
+            if(currentList.length > 0 && ref.current.scrollListenerAdded === false){
+                console.log('adding event listener');
+                document.addEventListener('scroll', scrollHandler)
+                ref.current.scrollListenerAdded = true;
+            }
+
         }
 
         console.log(`current list len: ${currentList.length}`)
@@ -51,13 +68,25 @@ const ItemView = ({filtersApplied, musiciansList, setDreamBand, dreamBand}) =>{
 
 
     const scrollHandler = (e) => {
-        console.log(`offset height: ${document.getElementsByClassName("listOfMusicians")[0].offsetHeight}`)
-        console.log(`offset height: ${e.target.documentElement.scrollTop}`)
-        if((document.getElementsByClassName("listOfMusicians")[0].offsetHeight - 532) - e.target.documentElement.scrollTop < 0){
-
+        // //Высота окна пользователя
+        // console.log(`offset height: ${e.target.documentElement.offsetHeight}`)
+        // //Высота элемента с музыкантами
+        // console.log(`element height: ${document.getElementsByClassName("listOfMusicians")[0].offsetHeight}`)
+        // //Проскролленая высота
+        // console.log(`scrolled: ${e.target.documentElement.scrollTop}`)
+        // // console.log(`ScrollTop: ${e.target.documentElement.scrollTop}`)
+        // // console.log(`ClientHeight: ${document.ClientHeight}`)
+        // console.log(`difference: ${(e.target.documentElement.offsetHeight - document.getElementsByClassName("listOfMusicians")[0].offsetHeight)}`)
+        // console.log(`scrollTop: ${e.target.documentElement.scrollTop}`)
+        console.log(`handler got: Difference: ${ref.current.offsetHeight - ref.current.musiciansListHeight}, scroll With margin: ${e.target.documentElement.scrollTop - ref.current.scrollTopMargin}`)
+        // console.log(`scrollHandler difference: ${e.target.documentElement.offsetHeight - ref.current.musiciansListHeight}`)
+        console.log(`scrollTop: ${e.target.documentElement.scrollTop}`)
+        if((ref.current.offsetHeight - ref.current.musiciansListHeight) < e.target.documentElement.scrollTop - ref.current.scrollTopMargin){
             console.log('end');
+            ref.current.scrollTopMargin += 950;
+            console.log(`scroll margin update: ${ref.current.scrollTopMargin}`)
             setLoading(true);
-            document.removeEventListener('scroll', scrollHandler);
+            
         }
         
     }
