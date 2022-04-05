@@ -61,6 +61,7 @@ const ItemView = ({filtersApplied, musiciansList, setDreamBand, dreamBand}) =>{
 
 
     const scrollHandler = (e) => {
+        console.log(e.target.documentElement.scrollTop);
         if((ref.current.offsetHeight - ref.current.musiciansListHeight) < e.target.documentElement.scrollTop - ref.current.scrollTopMargin){
             ref.current.scrollTopMargin += 950;
             setLoading(true);
