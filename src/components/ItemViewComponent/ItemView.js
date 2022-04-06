@@ -61,7 +61,7 @@ const ItemView = ({filtersApplied, musiciansList, setDreamBand, dreamBand}) =>{
 
 
     const scrollHandler = (e) => {
-        console.log(e.target.documentElement.scrollTop);
+        // console.log(e.target.documentElement.scrollTop);
         if((ref.current.offsetHeight - ref.current.musiciansListHeight) < e.target.documentElement.scrollTop - ref.current.scrollTopMargin){
             ref.current.scrollTopMargin += 950;
             setLoading(true);
@@ -132,7 +132,7 @@ const ItemView = ({filtersApplied, musiciansList, setDreamBand, dreamBand}) =>{
 
     const loadingSpan = () => {
         return(
-            <div style={{marginTop: '-20px'}}>
+            <div style={{marginTop: '-20px', color: 'white'}}>
                 <span>
                     {currentList.length === 0 ? "Loading musicians..." : "Loading more..."}
                 </span>

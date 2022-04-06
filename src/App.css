@@ -15,6 +15,10 @@
   display: flex;
 }
 
+body {
+  background-color: black;
+}
+
 .filterMenu {
   background-color: grey;
   width: 200px;

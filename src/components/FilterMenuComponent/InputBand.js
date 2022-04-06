@@ -8,6 +8,9 @@ const element = <FontAwesomeIcon icon={faXmark} />
 const InputBand = ({setBandFilter, preInput}) => {
     const[displayParamForCross, setDisplayParamForCross] = useState('none');
 
+    console.log(`stored input: ${preInput}`)
+    setBandFilter(preInput);
+
     const onChange = (e) => {
         setBandFilter(e.target.value);
         ref.current.inputValue = e.target.value;
@@ -22,7 +25,6 @@ const InputBand = ({setBandFilter, preInput}) => {
     const ref = useRef({
         inputValue: preInput
     })
-    console.log(`preInput: ${preInput}`)
 
     const onCross = () => {
         ref.current.inputValue = '';

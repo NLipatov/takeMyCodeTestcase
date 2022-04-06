@@ -3,6 +3,10 @@ import Select from 'react-select';
 
 
 const SelectRole = ({roles, setRoleFilter, preSelected}) => {
+
+    // console.log(`preselected value: ${preSelected}`)
+
+
     const options = [{value: undefined, label: 'All Roles'}]
     roles.map(i => {
         return options.push(

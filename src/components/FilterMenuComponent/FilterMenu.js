@@ -7,6 +7,8 @@ import SelectRole from './Select/SelectRole';
 import useRoleDefiner from './Select/RoleDefiner';
 import './FilterMenu.css';
 
+
+
 const FilterMenu = ({setMusicianList, setAppMusiciansList}) => {
     const musiciansList = useDbMock().getMusiciansList();
 
@@ -15,6 +17,38 @@ const FilterMenu = ({setMusicianList, setAppMusiciansList}) => {
 
     
     const roles = useRoleDefiner(musiciansList);
+
+    let storedFilters = {
+        preInput: bandFilter,
+        preSelect: roleFilter
+    }
+
+    const getStoredFilters = () => {
+        const storedValue = localStorage.getItem('storedFilter');
+        if(storedValue !== null){
+            storedFilters = JSON.parse(localStorage.getItem('storedFilter'));
+        }
+    } 
+
+    getStoredFilters();
+
+    
+
+    const checkIfUserHasSavedFilters = (obj) => {
+        return Object.keys(obj).length > 0;
+    }
+
+    if(checkIfUserHasSavedFilters(storedFilters)){
+        console.log('savedFilters detected!')
+    }
+    else{
+        console.log('user doesnt have any stored filters')
+    }
+
+
+    const saveFilters = (obj) => {
+        localStorage.setItem('storedFilter', JSON.stringify(obj));
+    }
 
     useEffect(() =>{
         setAppMusiciansList(musiciansList);
@@ -51,8 +85,8 @@ const FilterMenu = ({setMusicianList, setAppMusiciansList}) => {
     }
     return (
         <>
-            <InputBand setBandFilter={setBandFilter}/>
-            <SelectRole roles={roles} setRoleFilter={setRoleFilter}/>
+            <InputBand setBandFilter={setBandFilter} preInput={storedFilters.preInput}/>
+            <SelectRole roles={roles} setRoleFilter={setRoleFilter} preSelected={storedFilters.preSelect}/>
             <div style={{margin: '5px'}}>
                 <button
                 className="applyFiltersButton"
@@ -62,6 +96,13 @@ const FilterMenu = ({setMusicianList, setAppMusiciansList}) => {
                     setAppMusicianList();
                 }}>
                     Apply Filters
+                </button>
+                <button
+                style={{height: '38px', width: '100%', borderRadius: '4px'}}
+                onClick={()=>{
+                    saveFilters(storedFilters);
+                }}>
+                    Save Filters
                 </button>
             </div>
 
