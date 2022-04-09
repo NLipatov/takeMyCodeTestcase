@@ -24,13 +24,15 @@ const FilterMenu = ({setMusicianList, setAppMusiciansList}) => {
     }
 
     const getStoredFilters = () => {
+        // console.log(roleFilter.value)
         const storedValue = localStorage.getItem('storedFilter');
+        
         if(storedValue !== null){
             storedFilters = JSON.parse(localStorage.getItem('storedFilter'));
+            setBandFilter(storedFilters.preInput);
+            setRoleFilter(storedFilters.preSelect);
         }
     } 
-
-    getStoredFilters();
     
 
     const checkIfUserHasSavedFilters = (obj) => {
@@ -95,7 +97,7 @@ const FilterMenu = ({setMusicianList, setAppMusiciansList}) => {
     return (
         <>
             <InputBand value={storedFilters.preInput} onChange={setBandFilter}/>
-            <SelectRole options={options} selectedOption={roleFilter.value} changeSelect={setRoleFilter}/>
+            <SelectRole selectedOption={storedFilters.preSelect} options={options} changeSelect={setRoleFilter}/>
             <div style={{margin: '5px'}}>
                 <button
                 className="applyFiltersButton"
@@ -112,6 +114,11 @@ const FilterMenu = ({setMusicianList, setAppMusiciansList}) => {
                     saveFilters(storedFilters);
                 }}>
                     Save Filters
+                </button>
+                <button
+                style={{height: '38px', width: '100%', borderRadius: '4px'}}
+                    onClick={getStoredFilters}>
+                    Load Filters
                 </button>
             </div>
 

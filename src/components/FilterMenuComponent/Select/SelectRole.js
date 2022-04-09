@@ -10,6 +10,7 @@ const SelectRole = ({options, selectedOption, changeSelect}) => {
                 options={options}
                 placeholder='Sort By Role'
                 onChange={(e)=>{
+                    console.log(e.value)
                     changeSelect(e.value)
                 }}
                 value={selectedOption}
