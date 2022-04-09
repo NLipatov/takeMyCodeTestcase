@@ -12,7 +12,7 @@ import './FilterMenu.css';
 const FilterMenu = ({setMusicianList, setAppMusiciansList}) => {
     const musiciansList = useDbMock().getMusiciansList();
 
-    const [roleFilter, setRoleFilter] = useState(undefined);
+    const [roleFilter, setRoleFilter] = useState('');
     const [bandFilter, setBandFilter] = useState('');
 
     
@@ -20,7 +20,7 @@ const FilterMenu = ({setMusicianList, setAppMusiciansList}) => {
 
     let storedFilters = {
         preInput: bandFilter,
-        preSelect: roleFilter
+        preSelect: roleFilter,
     }
 
     const getStoredFilters = () => {
@@ -73,7 +73,7 @@ const FilterMenu = ({setMusicianList, setAppMusiciansList}) => {
 
     const setAppMusicianList = () => {
         let filtered = JSON.parse(JSON.stringify(musiciansList));
-        if(roleFilter !== undefined){
+        if(roleFilter !== ''){
             filtered = filtered.filter(x=>x.role === roleFilter)
         }
         if(bandFilter !== undefined){
@@ -82,10 +82,20 @@ const FilterMenu = ({setMusicianList, setAppMusiciansList}) => {
         setMusicianList(filtered);
 
     }
+
+    const options = [{value: '', label: 'All Roles'}]
+    roles.map(i => {
+        return options.push(
+            {
+                value: i, label: `${i.charAt(0).toUpperCase()}${i.slice(1)}`,
+            }
+        )
+    })
+
     return (
         <>
             <InputBand value={storedFilters.preInput} onChange={setBandFilter}/>
-            <SelectRole roles={roles} setRoleFilter={setRoleFilter} preSelected={storedFilters.preSelect}/>
+            <SelectRole options={options} selectedOption={roleFilter.value} changeSelect={setRoleFilter}/>
             <div style={{margin: '5px'}}>
                 <button
                 className="applyFiltersButton"
