@@ -7,7 +7,7 @@ const useDbMock = () =>{
             lastName: 'Durst',
             role: 'frontman',
             band: 'Limp Bizkit',
-            picture: 'https://townsquare.media/site/366/files/2021/07/attachment-fred_durst_limp_bizkit_2000.jpg?w=1200&h=0&zc=1&s=0&a=t&q=89'
+            picture: 'https://i.ibb.co/fYF8vKY/attachment-fred-durst-limp-bizkit-2000.jpg'
         },
         {
             id: 1,
@@ -15,7 +15,7 @@ const useDbMock = () =>{
             lastName: 'Borland',
             role: 'guitarist',
             band: 'Limp Bizkit',
-            picture: 'https://www.themoviedb.org/t/p/w235_and_h235_face/mjcZkCBVYEF9qFMWqfZX112NChw.jpg'
+            picture: 'https://i.ibb.co/C75Pkst/mjc-Zk-CBVYEF9q-FMWqf-ZX112-NChw.jpg'
         },
         {
             id: 2,
@@ -23,7 +23,7 @@ const useDbMock = () =>{
             lastName: 'Otto',
             role: 'drummer',
             band: 'Limp Bizkit',
-            picture: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Drummer_John_Otto_of_Limp_Bizkit_in_2006.jpg'
+            picture: 'https://i.ibb.co/JjdkG4G/Drummer-John-Otto-of-Limp-Bizkit-in-2006.jpg'
         },
         {
             id: 3,
@@ -31,7 +31,7 @@ const useDbMock = () =>{
             lastName: 'Dimant',
             role: 'DJ',
             band: 'Limp Bizkit',
-            picture: 'https://images.unian.net/pb/002/thumb_files/h_190/209033.jpg'
+            picture: 'https://i.ibb.co/bL11tk6/209033.jpg'
         },
         {
             id: 4,
@@ -39,7 +39,7 @@ const useDbMock = () =>{
             lastName: 'Rivers',
             role: 'bass guitarist',
             band: 'Limp Bizkit',
-            picture: 'https://townsquare.media/site/366/files/2020/01/Sam-Rivers-Limp-Bizkit.jpg?w=1200&h=0&zc=1&s=0&a=t&q=89'
+            picture: 'https://i.ibb.co/16ZbZYP/Sam-Rivers-Limp-Bizkit.jpg'
         },
         {
             id: 5,
@@ -47,7 +47,7 @@ const useDbMock = () =>{
             lastName: 'Davis',
             role: 'frontman',
             band: 'Korn',
-            picture: 'https://www.billboard.com/wp-content/uploads/media/Jonathan-Davis-of-Korn-2017-reading-fest-billboard-1548.jpg?w=1024'
+            picture: 'https://i.ibb.co/fvpgJsx/Screenshot-2022-04-07-185316.png'
         },
         {
             id: 6,
@@ -55,7 +55,7 @@ const useDbMock = () =>{
             lastName: 'Shaffer',
             role: 'guitarist',
             band: 'Korn',
-            picture: 'https://upload.wikimedia.org/wikipedia/commons/8/83/Korn_Rock_Im_Park_2016_%2812_von_14%29_%281%29.jpg'
+            picture: 'https://i.ibb.co/vvVk9SB/Korn-Rock-Im-Park-2016-12-von-14-1.jpg'
         },
         {
             id: 7,
@@ -63,7 +63,7 @@ const useDbMock = () =>{
             lastName: 'Arvizu',
             role: 'bass guitarist',
             band: 'Korn',
-            picture: 'https://i.pinimg.com/236x/41/94/fe/4194fef9ec8cd6a0379c90e9468ab420--korn-bands.jpg'
+            picture: 'https://i.ibb.co/ZSxGBcf/4194fef9ec8cd6a0379c90e9468ab420-korn-bands.jpg'
         },
         {
             id: 8,
@@ -71,7 +71,7 @@ const useDbMock = () =>{
             lastName: 'Welch',
             role: 'guitarist',
             band: 'Korn',
-            picture: 'https://i.discogs.com/hd35zF9MKfK1jhI4fg7Q5HOTCAGsRCQgRupFuhpMlDg/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWltYWdlcy9BLTc3/MjY0MC0xMjg0MTUx/Njc5LmpwZWc.jpeg'
+            picture: 'https://i.ibb.co/njr6XD9/A-772640-1284151679.jpg'
         },
         {
             id: 9,
@@ -79,7 +79,7 @@ const useDbMock = () =>{
             lastName: 'Luzier',
             role: 'drummer',
             band: 'Korn',
-            picture: 'https://upload.wikimedia.org/wikipedia/commons/c/c8/Ray_Luzier_of_Korn.jpg'
+            picture: 'https://i.ibb.co/ZdCntBJ/Ray-Luzier-of-Korn.jpg'
         },
         {
             id: 10,
@@ -87,7 +87,7 @@ const useDbMock = () =>{
             lastName: 'Gomes',
             role: 'frontman',
             band: 'Hed Pe',
-            picture: 'https://popularbio.com/wp-content/uploads/2020/05/Jared-Gomes-1200x1200.jpg'
+            picture: 'https://i.ibb.co/wJ4BHdT/Jared-Gomes-1200x1200.jpg'
         },
         {
             id: 11,
@@ -95,7 +95,7 @@ const useDbMock = () =>{
             lastName: 'Stratton',
             role: 'drummer',
             band: 'Hed Pe',
-            picture: 'https://yt3.ggpht.com/ytc/AKedOLSKuHfQBEZlLOj2sno5xnLXn4lp7MX1djw5Cc0D3g=s900-c-k-c0x00ffffff-no-rj'
+            picture: 'https://i.ibb.co/YRSTZhH/unnamed.jpg'
         },
         {
             id: 12,
@@ -103,7 +103,7 @@ const useDbMock = () =>{
             lastName: 'Blankenship',
             role: 'bass guitarist',
             band: 'Hed Pe',
-            picture: 'https://www.govenuemagazine.com/wp-content/gallery/hed-pe-machine-shop/Hed-PE-12.jpg'
+            picture: 'https://i.ibb.co/RhGb2PC/Hed-PE-12.jpg'
         },
         {
             id: 13,
@@ -111,7 +111,7 @@ const useDbMock = () =>{
             lastName: 'Javier',
             role: 'guitarist',
             band: 'Hed Pe',
-            picture: 'https://cdn.bandmix.com/bandmix_us/media/133/133171/97531-l.jpg'
+            picture: 'https://i.ibb.co/2PtrGKL/97531-l.jpg'
         },
         {
             id: 14,
@@ -119,7 +119,7 @@ const useDbMock = () =>{
             lastName: 'Lindemann',
             role: 'frontman',
             band: 'Rammstein',
-            picture: 'https://i0.wp.com/www.rammsteinpress.com/wp-content/uploads/2016/11/Bnlz1a_X0et_I.jpg?fit=1280%2C853&ssl=1'
+            picture: 'https://i.ibb.co/yPrW6w8/Screenshot-2022-04-07-185410.png'
         },
         {
             id: 15,
@@ -127,7 +127,7 @@ const useDbMock = () =>{
             lastName: 'Landers',
             role: 'guitarist',
             band: 'Rammstein',
-            picture: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/095bb27d-3c41-4fd2-98f8-e561ee33bcda/d771nyb-1d58f7f6-b0ca-4bb1-b6d7-85d4b770980f.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzA5NWJiMjdkLTNjNDEtNGZkMi05OGY4LWU1NjFlZTMzYmNkYVwvZDc3MW55Yi0xZDU4ZjdmNi1iMGNhLTRiYjEtYjZkNy04NWQ0Yjc3MDk4MGYuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yqOVdq_ASGRPi4gyPn-Iod4bFgilYJ7rPe3ZuBkbZGI'
+            picture: 'https://i.ibb.co/1QqgzCH/d771nyb-1d58f7f6-b0ca-4bb1-b6d7-85d4b770980f.jpg'
         },
         {
             id: 16,
@@ -135,7 +135,7 @@ const useDbMock = () =>{
             lastName: 'Schneider',
             role: 'drummer',
             band: 'Rammstein',
-            picture: 'https://cdn.mos.cms.futurecdn.net/rwNC8TZZpZ5WqfVpX7Z59g.jpg'
+            picture: 'https://i.ibb.co/kmH6LHQ/rw-NC8-TZZp-Z5-Wqf-Vp-X7-Z59g.jpg'
         },
         {
             id: 17,
@@ -143,7 +143,7 @@ const useDbMock = () =>{
             lastName: 'Lorenz',
             role: 'keyboard player',
             band: 'Rammstein',
-            picture: 'https://cloudfront-eu-central-1.images.arcpublishing.com/rtl/FXBWTXKG3XEIKO6RZ7EWXWY3GA.jpg'
+            picture: 'https://i.ibb.co/Qpbj8Nh/FXBWTXKG3-XEIKO6-RZ7-EWXWY3-GA.jpg'
         },
         {
             id: 18,
@@ -151,7 +151,7 @@ const useDbMock = () =>{
             lastName: 'Kruspe',
             role: 'guitarist',
             band: 'Rammstein',
-            picture: 'https://thoughtsallsorts.files.wordpress.com/2017/09/richardkruspe.jpg?w=337&h=351'
+            picture: 'https://i.ibb.co/VQ5WswK/Screenshot-2022-04-07-185442.png'
         },
         {
             id: 19,
@@ -159,7 +159,7 @@ const useDbMock = () =>{
             lastName: 'Riedel',
             role: 'bass guitarist',
             band: 'Rammstein',
-            picture: 'https://i.pinimg.com/originals/e4/56/ac/e456ac3dca77fc14c92c0a926b7cdf8a.jpg'
+            picture: 'https://i.ibb.co/gVM4Jqz/e456ac3dca77fc14c92c0a926b7cdf8a.jpg'
         },
         {
             id: 20,
@@ -167,7 +167,7 @@ const useDbMock = () =>{
             lastName: 'Sparks',
             role: 'frontman',
             band: 'L7',
-            picture: 'https://cachedimages.podchaser.com/256x256/aHR0cHM6Ly9jcmVhdG9yLWltYWdlcy5wb2RjaGFzZXIuY29tLzE4ZWQ2ZmJhMjczMjhkYWNkYTMzOGY3ZTBiMTJhYzUzLmpwZWc%3D/aHR0cHM6Ly93d3cucG9kY2hhc2VyLmNvbS9pbWFnZXMvbWlzc2luZy1pbWFnZS5wbmc%3D'
+            picture: 'https://i.ibb.co/1LTrgcW/Screenshot-2022-04-07-185501.png'
         },
         {
             id: 21,
@@ -175,7 +175,7 @@ const useDbMock = () =>{
             lastName: 'Gardner',
             role: 'guitarist',
             band: 'L7',
-            picture: 'https://image.tmdb.org/t/p/original/sVzDCCdVTH4ZEXWkoQIpm5Hq8g5.jpg'
+            picture: 'https://i.ibb.co/71fLJgq/s-Vz-DCCd-VTH4-ZEXWko-QIpm5-Hq8g5.jpg'
         },
         {
             id: 22,
@@ -183,7 +183,7 @@ const useDbMock = () =>{
             lastName: 'Finch',
             role: 'bass guitarist',
             band: 'L7',
-            picture: 'https://1yd4xt11c7is39w2ckdxdls5-wpengine.netdna-ssl.com/wp-content/uploads/2019/07/Jennifer_Precious_finch_main_750.jpeg'
+            picture: 'https://i.ibb.co/QHVvJj9/Jennifer-Precious-finch-main-750.jpg'
         },
         {
             id: 23,
@@ -191,7 +191,7 @@ const useDbMock = () =>{
             lastName: 'Plakas',
             role: 'drummer',
             band: 'L7',
-            picture: 'https://www.personality-database.com/profile_images/11982.png'
+            picture: 'https://i.ibb.co/f00L9qZ/11982.png'
         },
         {
             id: 24,
@@ -199,7 +199,7 @@ const useDbMock = () =>{
             lastName: '',
             role: 'frontman',
             band: 'Rise of the Northstar',
-            picture: 'https://i.pinimg.com/originals/ed/8d/81/ed8d817ba3dbdf726e90b4b98133a22a.jpg'
+            picture: 'https://i.ibb.co/DtVZNBS/ed8d817ba3dbdf726e90b4b98133a22a.jpg'
         },            
         {
             id: 25,
@@ -207,7 +207,7 @@ const useDbMock = () =>{
             lastName: '',
             role: 'guitarist',
             band: 'Rise of the Northstar',
-            picture: 'https://live.staticflickr.com/926/43439194752_b6521a0794_b.jpg'
+            picture: 'https://i.ibb.co/PQyZCM3/43439194752-b6521a0794-b.jpg'
         },
         {
             id: 26,
@@ -215,7 +215,7 @@ const useDbMock = () =>{
             lastName: '',
             role: 'bass guitarist',
             band: 'Rise of the Northstar',
-            picture: 'http://ekladata.com/G05w9fpqeHsORwvb6dwwsChZTUg.jpg'
+            picture: 'https://i.ibb.co/9gsfFLP/G05w9fpqe-Hs-ORwvb6dwws-Ch-ZTUg.jpg'
         },
         {
             id: 27,
@@ -223,7 +223,7 @@ const useDbMock = () =>{
             lastName: '',
             role: 'drummer',
             band: 'Rise of the Northstar',
-            picture: 'https://www.summer-breeze.de/wp-content/uploads/2019/08/18/RiseOfTheNorthstar_PK_20190817_151.jpg'
+            picture: 'https://i.ibb.co/7t2MfGV/Rise-Of-The-Northstar-PK-20190817-151.jpg'
         },
     ]
     const getMusiciansList = () =>{
