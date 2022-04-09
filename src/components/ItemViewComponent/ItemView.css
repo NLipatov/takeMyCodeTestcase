@@ -11,3 +11,9 @@
 .listOfMusicians {
     margin-right: 10px;
 }
+
+@media (max-width: 768px) {
+    .listOfMusicians {
+        width: 260px;
+    }
+}

@@ -145,7 +145,7 @@ const ItemView = ({filtersApplied, musiciansList, setDreamBand, dreamBand}) =>{
             <div>
                 <ul className="listOfMusicians"
                 style={
-                    {listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', padding: '10px', paddingRight: '15px', marginBottom: '20px'}
+                    {listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', padding: '10px', paddingRight: '0px', marginBottom: '20px'}
                     }>
                     {currentList.length > 0 ? renderItems(currentList) : null}
                 </ul>
@@ -158,7 +158,7 @@ const ItemView = ({filtersApplied, musiciansList, setDreamBand, dreamBand}) =>{
             <div>
                 <ul className="listOfMusicians"
                 style={
-                    {listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', padding: '10px', paddingRight: '15px', marginBottom: '20px'}
+                    {listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', padding: '10px', marginBottom: '20px'}
                     }>
                     {musiciansList.length > 0 ? renderItems(musiciansList) : null}
                 </ul>
