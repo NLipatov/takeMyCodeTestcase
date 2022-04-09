@@ -12,7 +12,7 @@ ReactDOM.render(
       <title>Dream Band</title>
       <meta name="description" content="React application" />
     </Helmet>
-    <div style={{overflowX: 'hidden'}}>
+    <div>
       <App />
     </div>
   </React.StrictMode>,
