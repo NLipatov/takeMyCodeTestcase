@@ -5,42 +5,18 @@ import './input.css';
 
 const element = <FontAwesomeIcon icon={faXmark} />
 
-const InputBand = ({setBandFilter, preInput}) => {
-    const[displayParamForCross, setDisplayParamForCross] = useState('none');
+const InputBand = ({value, onChange}) => {
 
-    console.log(`stored input: ${preInput}`)
-    setBandFilter(preInput);
-
-    const onChange = (e) => {
-        setBandFilter(e.target.value);
-        ref.current.inputValue = e.target.value;
-        if(e.target.value.length > 0){
-            setDisplayParamForCross('');
-        }
-        else{
-            setDisplayParamForCross('none');
-        }
-    }
-
-    const ref = useRef({
-        inputValue: preInput
-    })
-
-    const onCross = () => {
-        ref.current.inputValue = '';
-        setDisplayParamForCross('none');
-        setBandFilter(undefined);
-    }
     return (
         <div style={{margin: '5px', backgroundColor: 'white', borderRadius: '4px', height: '38px', display: 'flex'}}>
-            <input value={ref.current.inputValue} 
+            <input value={value} 
                 placeholder='Sort by band'
-                onChange={onChange}
+                onChange={(e) => onChange(e.target.value)}
                 style={{border: 'none', width: `100%`, borderRadius: '4px', height: '38px', padding: '10px'}}
                 className='inputOnFilterMenu'
                 />
-            <span style={{fontSize: '19pt', cursor: 'pointer', display: `${displayParamForCross}`, position: 'absolute', right: '10px'}}
-                onClick={onCross}>
+            <span style={{fontSize: '19pt', cursor: 'pointer', display: `${value.length > 0 ? '' : 'none'}`, position: 'absolute', right: '10px'}}
+            onClick={()=> onChange('')}>
                 {element}         
             </span>
         </div>

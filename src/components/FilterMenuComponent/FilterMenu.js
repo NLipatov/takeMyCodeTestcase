@@ -13,7 +13,7 @@ const FilterMenu = ({setMusicianList, setAppMusiciansList}) => {
     const musiciansList = useDbMock().getMusiciansList();
 
     const [roleFilter, setRoleFilter] = useState(undefined);
-    const [bandFilter, setBandFilter] = useState(undefined);
+    const [bandFilter, setBandFilter] = useState('');
 
     
     const roles = useRoleDefiner(musiciansList);
@@ -31,7 +31,6 @@ const FilterMenu = ({setMusicianList, setAppMusiciansList}) => {
     } 
 
     getStoredFilters();
-
     
 
     const checkIfUserHasSavedFilters = (obj) => {
@@ -85,7 +84,7 @@ const FilterMenu = ({setMusicianList, setAppMusiciansList}) => {
     }
     return (
         <>
-            <InputBand setBandFilter={setBandFilter} preInput={storedFilters.preInput}/>
+            <InputBand value={storedFilters.preInput} onChange={setBandFilter}/>
             <SelectRole roles={roles} setRoleFilter={setRoleFilter} preSelected={storedFilters.preSelect}/>
             <div style={{margin: '5px'}}>
                 <button
