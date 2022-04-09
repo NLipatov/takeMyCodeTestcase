@@ -76,7 +76,7 @@ const FilterMenu = ({setMusicianList, setAppMusiciansList}) => {
         if(roleFilter !== ''){
             filtered = filtered.filter(x=>x.role === roleFilter)
         }
-        if(bandFilter !== undefined){
+        if(bandFilter !== ''){
             filtered = filtered.filter(x=>x.band.toLowerCase().includes(bandFilter.toLowerCase()))
         }
         setMusicianList(filtered);
