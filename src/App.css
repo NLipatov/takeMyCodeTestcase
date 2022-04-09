@@ -38,3 +38,12 @@ body {
   margin: 5px;
 }
 
+@media (max-width: 768px) {
+  .filterMenu {
+    width: 140px;
+  }
+  .items {
+    margin-left: 140px;
+  }
+}
+
