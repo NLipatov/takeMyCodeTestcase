@@ -1,8 +1,12 @@
-import React, {useRef} from 'react';
+import React, {useRef, useEffect} from 'react';
 import Select from 'react-select';
 
 
 const SelectRole = ({options, selectedOption, changeSelect}) => {
+    useEffect(()=>{
+        console.log('effect on select component');
+        console.log(selectedOption)
+    }, [selectedOption])
 
     return(
         <>
@@ -10,10 +14,9 @@ const SelectRole = ({options, selectedOption, changeSelect}) => {
                 options={options}
                 placeholder='Sort By Role'
                 onChange={(e)=>{
-                    console.log(e.value)
                     changeSelect(e.value)
                 }}
-                value={selectedOption}
+                value={options.find(x=>x.value === selectedOption)}
                 />
         </>
     )

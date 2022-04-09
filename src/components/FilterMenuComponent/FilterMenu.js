@@ -31,6 +31,7 @@ const FilterMenu = ({setMusicianList, setAppMusiciansList}) => {
             storedFilters = JSON.parse(localStorage.getItem('storedFilter'));
             setBandFilter(storedFilters.preInput);
             setRoleFilter(storedFilters.preSelect);
+            console.log(storedFilters.preSelect)
         }
     } 
     
