@@ -1,12 +1,8 @@
-import React, {useRef, useEffect} from 'react';
+import React from 'react';
 import Select from 'react-select';
 
 
 const SelectRole = ({options, selectedOption, changeSelect}) => {
-    useEffect(()=>{
-        console.log('effect on select component');
-        console.log(selectedOption)
-    }, [selectedOption])
 
     return(
         <>
