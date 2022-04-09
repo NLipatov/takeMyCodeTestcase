@@ -36,6 +36,23 @@ function App() {
         </div>
       </div>
 
+      <div class="noFiltersSaved" style={{
+      display: 'flex', 
+      height: '60px', 
+      width: '150px', 
+      position: 'absolute', 
+      backgroundColor: 'rgba(100, 0, 20, 0.8)',
+      transition: 'all 1s ease 0s', 
+      transform: 'translate(0px, 55vh)',
+      color: 'white',
+      margin: '10px',
+      left: '0',
+      top: '0',
+      marginLeft: '-200px'}}>
+        <span style={{margin: 'auto'}}>
+          No filters saved
+        </span>
+      </div>
     </div>
   );
 }
