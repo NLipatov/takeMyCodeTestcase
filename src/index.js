@@ -12,7 +12,7 @@ ReactDOM.render(
       <title>Dream Band</title>
       <meta name="description" content="React application" />
     </Helmet>
-    <div>
+    <div className="appClass">
       <App />
     </div>
   </React.StrictMode>,
