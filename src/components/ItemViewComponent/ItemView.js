@@ -82,7 +82,7 @@ const ItemView = ({filtersApplied, musiciansList, setDreamBand, dreamBand}) =>{
                 key={i.id}>
                     <div style={{display: 'flex', flexDirection: 'column'}}>
                         <div
-                            style={{display: 'flex', backgroundColor: dreamBand.filter(x=>x.id === i.id).length === 0 ? "grey" : "gold", transition: 'all 2s ease 0s', borderTopLeftRadius: '25px'}}>
+                            style={{display: 'flex', backgroundColor: dreamBand.filter(x=>x.id === i.id).length === 0 ? "silver" : "gold", transition: 'all 2s ease 0s', borderTopLeftRadius: '25px'}}>
                             <div>
                                 <img 
                                 onClick={() =>{

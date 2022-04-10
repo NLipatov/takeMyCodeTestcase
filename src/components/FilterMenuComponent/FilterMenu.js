@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
-import InputBand from './InputBand';
+import InputBand from './Input/InputBand';
 import useDbMock from '../../services/dbMock';
 import SelectRole from './Select/SelectRole';
 import useRoleDefiner from './Select/RoleDefiner';
@@ -24,7 +24,6 @@ const FilterMenu = ({setMusicianList, setAppMusiciansList}) => {
     }
 
     const getStoredFilters = () => {
-        // console.log(roleFilter.value)
         const storedValue = localStorage.getItem('storedFilter');
         
         if(storedValue !== null){
@@ -105,7 +104,7 @@ const FilterMenu = ({setMusicianList, setAppMusiciansList}) => {
         <>
             <InputBand value={storedFilters.preInput} onChange={setBandFilter}/>
             <SelectRole selectedOption={storedFilters.preSelect} options={options} changeSelect={setRoleFilter}/>
-            <div style={{margin: '5px'}}>
+            <div style={{marginTop: '-2px',marginRight: '5px', marginLeft: '5px', display: 'flex', flexDirection: 'column', gap: '6px'}}>
                 <button
                 className="applyFiltersButton"
                 style={{height: '38px', width: '100%', borderRadius: '4px'}}

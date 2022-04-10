@@ -8,7 +8,7 @@ const element = <FontAwesomeIcon icon={faXmark} />
 const InputBand = ({value, onChange}) => {
 
     return (
-        <div style={{margin: '5px', backgroundColor: 'white', borderRadius: '4px', height: '38px', display: 'flex'}}>
+        <div style={{marginRight: '5px', marginLeft: '5px', backgroundColor: 'white', borderRadius: '4px', height: '38px', display: 'flex'}}>
             <input value={value} 
                 placeholder='Sort by band'
                 onChange={(e) => onChange(e.target.value)}

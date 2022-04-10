@@ -19,14 +19,7 @@ body {
   background-color: black;
 }
 
-.filterMenu {
-  background-color: grey;
-  width: 200px;
-  height: 500px;
-  position: fixed;
-  margin-top: 10px;
-  transition: all 2s ease 0s;
-}
+
 
 .items {
   width: 100%;
@@ -35,7 +28,8 @@ body {
 }
 
 .css-b62m3t-container {
-  margin: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 @media (max-width: 768px) {
